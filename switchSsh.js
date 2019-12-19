@@ -22,7 +22,7 @@ fs.readdir(`/Users/${userName}/.ssh`, (err, projectsList) => {
   for (let i = 0; i < projects.length; i++) {
     process.stdout.write(`${i === 0 ? "\n" : ""}${i} - ${projects[i]} \n`); // display list of all projects with their indexes in console
   }
-  process.stdout.write(`a - generate new ssh\n`);
+  // process.stdout.write(`a - generate new ssh\n`);
 
   switchProject(projects);
 });
@@ -33,28 +33,16 @@ function switchProject(projects) {
     output: process.stdout
   });
 
-  rl.question("Enter project number you want to switch on: ", async answer => {
+  rl.question("Enter project number you want to switch on: ", async str => {
     rl.close();
+    const answer = Number(str);
+    let selectedProject = "";
 
-    if (answer === "a") {
-      const command = `
-        cd ${sshDir} &&
-        mkdir ./asd1 &&
-        ssh keygen
-      `;
-      exec(command, (err, stdout, stderr) => {
-        if (err) console.log("err", err);
-        if (stderr) console.log("stderr", stderr);
-        if (stdout) console.log("stdout", stdout);
-  
-        if (!err && !stderr) {
-          console.log(`${1} is selected :)`);
-        }
-      });
-      return console.log("FUCK YOU")
+    if (Number.isNaN(answer)) {
+      selectedProject = projects.find(i => i === str) || "";
+    } else {
+      selectedProject = projects[answer];
     }
-
-    const selectedProject = projects[answer];
 
     if (!selectedProject) {
       console.log("ENTER VALID INDEX BITCHARA");
