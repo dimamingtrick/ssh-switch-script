@@ -10,5 +10,8 @@
   "license": "ISC",
   "bin": {
     "switchSsh": "./switchSsh.js"
+  },
+  "dependencies": {
+    "ssh-keygen": "^0.4.2"
   }
 }
