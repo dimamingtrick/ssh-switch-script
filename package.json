@@ -1,0 +1,14 @@
+{
+  "name": "sshscript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "switchSsh.js",
+  "scripts": {
+    "test": "node ./switchSsh.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "switchSsh": "./switchSsh.js"
+  }
+}
