@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "sshSwitch": "./switchSsh.js"
+    "sshswitch": "./switchSsh.js"
   }
 }
