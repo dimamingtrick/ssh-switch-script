@@ -6,7 +6,7 @@ const { exec } = require("child_process");
 process.stdout.write("\033c"); // clears console
 
 const userName = "dimasrago";
-const sshDir = "/Users/dimasrago/.ssh";
+const sshDir = "/Users/dmitryshraho/.ssh";
 
 fs.readdir(`/Users/${userName}/.ssh`, (err, projectsList) => {
   if (err) return console.log("Unable to scan directory: " + err);
