@@ -5,7 +5,7 @@ const { exec } = require("child_process");
 
 process.stdout.write("\033c"); // clears console
 
-const userName = "dimasrago";
+const userName = "dmitryshraho";
 const sshDir = "/Users/dmitryshraho/.ssh";
 
 fs.readdir(`/Users/${userName}/.ssh`, (err, projectsList) => {
