@@ -1,14 +1,47 @@
 {
-  "name": "sshscript",
+  "name": "ssh-profile-switcher",
   "version": "1.0.0",
-  "description": "",
-  "main": "switchSsh.js",
-  "scripts": {
-    "test": "node ./switchSsh.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "CLI tool for managing multiple SSH profiles for GitHub",
+  "main": "index.js",
   "bin": {
-    "sshswitch": "./switchSsh.js"
-  }
+    "sshswitch": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "install-global": "npm install -g .",
+    "uninstall-global": "npm uninstall -g ssh-profile-switcher",
+    "test": "node index.js",
+    "link": "npm link",
+    "unlink": "npm unlink"
+  },
+  "keywords": [
+    "ssh",
+    "github",
+    "cli",
+    "profile",
+    "switcher",
+    "ssh-key",
+    "multiple-accounts",
+    "github-profiles",
+    "terminal",
+    "command-line"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ssh-switch-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ssh-switch-script/issues"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "preferGlobal": true
 }
+
