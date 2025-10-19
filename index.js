@@ -233,11 +233,11 @@ async function main() {
   if (profiles.length === 0) {
     console.log(chalk.yellow('No profiles found.\n'));
   } else {
-    profiles.forEach((profile) => {
+    profiles.forEach((profile, index) => {
       const isActive = profile === currentProfile;
       const name = isActive 
-        ? `${profile} ${chalk.green('[+]')}`
-        : profile;
+        ? `${index + 1}. ${profile} ${chalk.green('[+]')}`
+        : `${index + 1}. ${profile}`;
       
       choices.push({
         name,
