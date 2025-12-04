@@ -74,10 +74,6 @@ async function switchProfile(profileName) {
       return false;
     }
 
-    console.log(
-      chalk.blue(`\nSwitching to profile: ${chalk.green(profileName)}`)
-    );
-
     // Copy keys
     fs.copyFileSync(privateKeySource, privateKeyDest);
 
@@ -98,12 +94,6 @@ async function switchProfile(profileName) {
       chalk.green("✓ Successfully switched to profile:"),
       chalk.bold(profileName)
     );
-
-    // Display public key
-    if (fs.existsSync(publicKeyDest)) {
-      console.log(chalk.blue("\nYour public key:"));
-      console.log(chalk.gray(fs.readFileSync(publicKeyDest, "utf8")));
-    }
 
     return true;
   } catch (error) {
@@ -212,21 +202,12 @@ async function createNewProfile() {
   }
 }
 
-function displayHeader() {
-  console.clear();
-  console.log(chalk.blue("\n╔════════════════════════════════════╗"));
-  console.log(chalk.blue("║     SSH Profile Switcher           ║"));
-  console.log(chalk.blue("╚════════════════════════════════════╝\n"));
-}
-
 async function main() {
   // Check if SSH directory exists
   if (!fs.existsSync(SSH_DIR)) {
     console.error(chalk.red(`Error: SSH directory not found at ${SSH_DIR}`));
     process.exit(1);
   }
-
-  displayHeader();
 
   const profiles = getAvailableProfiles();
   const currentProfile = getCurrentProfile();
